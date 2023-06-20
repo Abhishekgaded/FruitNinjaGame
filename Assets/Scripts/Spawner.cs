@@ -19,6 +19,11 @@ public class Spawner : MonoBehaviour
     public GameObject[] fruitPrefabs;
     private Collider SpawnArea;
 
+    public GameObject BombPrefab;
+
+    [Range(0f,1f)]
+    public float bombChance = 0.05f;
+
 
     private void Awake()
     {
@@ -44,6 +49,11 @@ public class Spawner : MonoBehaviour
         {
             //Spawning the random fruit from the fruit's prefab
             GameObject prefab = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+
+            if(Random.value < bombChance)
+            {
+               prefab =  BombPrefab;
+            }
 
             Vector3 position = new Vector3();
             //Setting the boundary for each and every axis;
