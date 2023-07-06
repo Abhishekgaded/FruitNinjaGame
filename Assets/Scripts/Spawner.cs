@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
-{
-    
+{    
     public float minSpawnDelay = 0.25f;
     public float maxSpawnDelay = 1f;
 
@@ -13,6 +12,7 @@ public class Spawner : MonoBehaviour
 
     public float minForce = 18f; 
     public float maxForce = 22f;
+
     //Life Span of the fruit after the spawning
     public float maxLifetime = 5f;
 
@@ -25,9 +25,13 @@ public class Spawner : MonoBehaviour
     public float bombChance = 0.05f;
 
 
+private void Update() {
+    Debug.Log("Changes made to the code editor");
+}
+
     private void Awake()
     {
-        SpawnArea = GetComponent<Collider>()    ;
+        SpawnArea = GetComponent<Collider>();
 
     }
 
@@ -55,12 +59,17 @@ public class Spawner : MonoBehaviour
                prefab =  BombPrefab;
             }
 
+            
+
             Vector3 position = new Vector3();
             //Setting the boundary for each and every axis;
             position.x = Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
             position.y = Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
-            position.z = Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
 
+            position.z = Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
+            // position.z = Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
+
+            
 
             //Using Euler angle and Quaternion rotation rotating the z axis;
             Quaternion rotation = Quaternion.Euler(0f,0f,Random.Range(minAngle,maxAngle));

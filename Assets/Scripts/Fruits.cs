@@ -19,6 +19,8 @@ public class Fruits : MonoBehaviour
         fruitRigidbody = GetComponent<Rigidbody>();
         fruitCollider = GetComponent<Collider>();
         juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
+
+        
     }
 
     private void Slice(Vector3 direction, Vector3 Position, float force)
@@ -27,6 +29,8 @@ public class Fruits : MonoBehaviour
 
         whole.SetActive(false);
         sliced.SetActive(true);
+
+        
 
         fruitCollider.enabled = false;
         juiceParticleEffect.Play();
@@ -40,6 +44,7 @@ public class Fruits : MonoBehaviour
         {
             slice.velocity = fruitRigidbody.velocity;
             slice.AddForceAtPosition(direction*force,Position,ForceMode.Impulse);
+            
         }
     }
 
