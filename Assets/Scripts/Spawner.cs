@@ -24,11 +24,6 @@ public class Spawner : MonoBehaviour
     [Range(0f,1f)]
     public float bombChance = 0.05f;
 
-
-private void Update() {
-    Debug.Log("Changes made to the code editor");
-}
-
     private void Awake()
     {
         SpawnArea = GetComponent<Collider>();
