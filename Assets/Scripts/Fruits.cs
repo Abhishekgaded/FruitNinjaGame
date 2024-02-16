@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fruits : MonoBehaviour
+public class Fruits : MonoBehaviour //Inheritance
 {
 
     public GameObject whole;
